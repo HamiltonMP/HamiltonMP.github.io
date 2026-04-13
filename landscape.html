@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANDSCAPE | 孟庆鹏 Qingpeng Meng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'off-white': '#F9F9F9', 'dark-gray': '#1A1A1A' },
+                    fontFamily: { serif: ['"Cormorant Garamond"', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F9F9F9; color: #1A1A1A; scroll-behavior: smooth; overflow-x: hidden; }
+        .lang-en { display: none; }
+        
+        .img-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh; 
+            object-fit: contain;
+        }
+
+        ::-webkit-scrollbar { width: 3px; }
+        ::-webkit-scrollbar-thumb { background: #E5E5E5; }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <nav class="fixed top-0 w-full z-50 px-10 h-24 flex items-center justify-between bg-white/30 backdrop-blur-lg border-b border-gray-100">
+        <a href="index.html#works" class="text-[10px] tracking-[0.4em] uppercase hover:line-through transition-all">← <span class="lang-zh">返回</span><span class="lang-en">Back</span></a>
+        <button onclick="toggleLang()" id="langBtn" class="text-[9px] tracking-[0.2em] uppercase border border-black px-4 py-1.5 hover:bg-black hover:text-white transition-all">EN / 中</button>
+    </nav>
+
+    <main class="max-w-[1600px] mx-auto px-10 pt-64 pb-40">
+        
+        <header class="mb-48 text-center" data-aos="fade-in">
+            <h1 class="font-serif text-[10rem] italic tracking-tighter opacity-[0.03] absolute left-1/2 transform -translate-x-1/2 -mt-20 select-none uppercase">Landscape</h1>
+            <h2 class="font-serif text-6xl md:text-7xl relative z-10 italic">
+                <span class="lang-zh">风光 · 叙事</span><span class="lang-en">Landscape / Narrative</span>
+            </h2>
+            <div class="h-[1px] w-20 bg-black mt-12 mx-auto opacity-20"></div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-48 items-start">
+            
+            <div class="img-wrapper" data-aos="fade-right">
+                <img src="images/landscape.1.jpg" alt="Landscape 01">
+            </div>
+
+            <div class="img-wrapper md:mt-32" data-aos="fade-left">
+                <img src="images/landscape.2.jpg" alt="Landscape 02">
+            </div>
+
+            <div class="img-wrapper" data-aos="fade-right">
+                <img src="images/landscape.3.jpg" alt="Landscape 03">
+            </div>
+
+            <div class="img-wrapper md:mt-20" data-aos="fade-left">
+                <img src="images/landscape.4.jpg" alt="Landscape 04">
+            </div>
+
+            <div class="img-wrapper md:-mt-16" data-aos="fade-right">
+                <img src="images/landscape.5.jpg" alt="Landscape 05">
+            </div>
+
+            <div class="img-wrapper" data-aos="fade-left">
+                <img src="images/landscape.6.jpg" alt="Landscape 06">
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-32 text-center border-t border-gray-100 mt-40">
+        <p class="text-[10px] tracking-[1.2em] text-gray-300 uppercase italic">Fin.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 300, once: true, easing: 'ease-out', offset: 50 });
+        
+        let isEn = false;
+        function toggleLang() {
+            isEn = !isEn;
+            document.querySelectorAll('.lang-zh').forEach(el => el.style.display = isEn ? 'none' : 'block');
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = isEn ? 'block' : 'none');
+            const langBtn = document.getElementById('langBtn');
+            langBtn.innerText = isEn ? 'CHINESE / 中文' : 'EN / 中';
+        }
+    </script>
+</body>
+</html>

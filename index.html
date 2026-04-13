@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孟庆鹏 Qingpeng Meng | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'off-white': '#F9F9F9', 'line-gray': '#E5E5E5', 'dark-gray': '#1A1A1A' },
+                    fontFamily: { serif: ['"Cormorant Garamond"', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F9F9F9; color: #1A1A1A; scroll-behavior: smooth; overflow-x: hidden; }
+        .lang-en { display: none; }
+        .img-gallery-frame {
+            position: relative;
+            width: 100%;
+            background-color: #F2F2F2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem 3rem; 
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .img-gallery-frame img {
+            max-width: 100%;
+            height: auto;
+            max-height: 82vh;
+            object-fit: contain;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .group:hover .img-gallery-frame img { transform: scale(1.015); }
+        ::-webkit-scrollbar { width: 3px; }
+        ::-webkit-scrollbar-thumb { background: #E5E5E5; }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <nav class="fixed top-0 w-full z-50 bg-off-white/80 backdrop-blur-md border-b border-line-gray">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-serif text-2xl tracking-tighter italic text-dark-gray">Qingpeng Meng</div>
+            <div class="flex items-center space-x-10 text-[10px] tracking-[0.3em] uppercase font-medium">
+                <a href="#about" class="hover:opacity-40 transition-opacity">
+                    <span class="lang-zh">关于</span><span class="lang-en">About</span>
+                </a>
+                <a href="#works" class="hover:opacity-40 transition-opacity">
+                    <span class="lang-zh">作品集</span><span class="lang-en">Portfolio</span>
+                </a>
+                <button onclick="toggleLang()" id="langBtn" class="border border-dark-gray px-4 py-1.5 hover:bg-black hover:text-white transition-all text-[10px] tracking-widest">
+                    EN / 中
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-64 pb-24">
+        
+        <div id="about" class="grid grid-cols-1 md:grid-cols-12 gap-16 pb-48 border-b border-line-gray mb-64" data-aos="fade-in">
+            <div class="md:col-span-7 space-y-12">
+                <section>
+                    <h4 class="text-[9px] font-bold tracking-[0.5em] uppercase mb-10 text-gray-400">
+                        <span class="lang-zh">简介 / BIOGRAPHY</span><span class="lang-en">BIOGRAPHY</span>
+                    </h4>
+                    <p class="lang-zh text-[14px] leading-loose text-gray-700 font-light text-justify">
+                        孟庆鹏，来自中国江苏的自由摄影师，现于美国学习与创作。曾入选 Leica Fotografie International（LFI）Master Shot，并获 IPA 国际摄影比赛 Official Selection。他的实践聚焦于纪实与城市语境，关注多背景下的个体经验与现实片段并尝试在日常生活之中捕捉安静与冲突的元素。目前其正构思一项横跨中美两地的纪实摄影项目。
+                    </p>
+                    <p class="lang-en text-[13px] leading-loose text-gray-500 font-light text-justify">
+                        Qingpeng Meng is a freelance photographer from Jiangsu, China, currently based in the U.S. for his academic and creative pursuits. Recognized as a Leica Fotografie International (LFI) Master Shot and an IPA Official Selection. His practice focuses on individual experiences and realistic fragments across diverse backgrounds. Currently developing a project spanning China and the U.S.
+                    </p>
+                </section>
+            </div>
+
+            <div class="md:col-span-4 md:col-start-9 space-y-12 text-[12px]">
+                <section>
+                    <h4 class="text-[9px] font-bold tracking-[0.5em] uppercase mb-8 text-gray-400">
+                        <span class="lang-zh">教育 / EDUCATION</span><span class="lang-en">EDUCATION</span>
+                    </h4>
+                    <p class="font-medium italic text-dark-gray">University of Wisconsin-Madison</p>
+                    <p class="text-gray-500">
+                        <span class="lang-zh">消费者科学 / 教育政策研究</span><span class="lang-en">Consumer Science / Ed Policy</span>
+                    </p>
+                </section>
+                
+                <section>
+                    <h4 class="text-[9px] font-bold tracking-[0.5em] uppercase mb-8 text-gray-400">
+                        <span class="lang-zh">荣誉 / RECOGNITION</span><span class="lang-en">RECOGNITION</span>
+                    </h4>
+                    <ul class="space-y-2 text-gray-600 uppercase tracking-widest">
+                        <li>
+                            <a href="https://lfi-online.de/en/gallery/qingpeng-meng-905208/lfi.html" target="_blank" class="hover:text-black transition-colors underline decoration-gray-200 underline-offset-4">LFI Master Shot</a>
+                        </li>
+                        <li>IPA Official Selection</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h4 class="text-[9px] font-bold tracking-[0.5em] uppercase mb-8 text-gray-400">
+                        <span class="lang-zh">联系 / CONTACT</span><span class="lang-en">CONTACT</span>
+                    </h4>
+                    <ul class="space-y-3 text-gray-600 tracking-widest text-[11px]">
+                        <li>
+                            <a href="https://www.linkedin.com/in/qingpeng-meng-168b7a2b5/" target="_blank" class="hover:text-black transition-colors flex items-center">
+                                LINKEDIN <span class="ml-2 opacity-30">↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:18761301023@163.com" class="hover:text-black transition-colors flex items-center uppercase">
+                                EMAIL <span class="ml-2 opacity-30">↗</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <div id="works" class="space-y-80">
+            <div class="grid grid-cols-1 md:grid-cols-12 items-center" data-aos="fade-right">
+                <div class="md:col-span-10">
+                    <a href="street.html" class="group block">
+                        <p class="text-[9px] tracking-[0.4em] mb-8 text-gray-400">01 / STREET PHOTOGRAPHY</p>
+                        <div class="img-gallery-frame"><img src="images/street_1.jpg" alt="Street"></div>
+                        <h3 class="font-serif text-5xl mt-12 group-hover:italic transition-all uppercase tracking-tighter">
+                            <span class="lang-zh">街头 / Street</span><span class="lang-en">Street</span>
+                        </h3>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 items-center" data-aos="fade-left">
+                <div class="md:col-start-4 md:col-span-9">
+                    <a href="landscape.html" class="group block text-right">
+                        <p class="text-[9px] tracking-[0.4em] mb-8 text-gray-400">02 / LANDSCAPE PHOTOGRAPHY</p>
+                        <div class="img-gallery-frame"><img src="images/landscape_1.jpg" alt="Landscape"></div>
+                        <h3 class="font-serif text-5xl mt-12 group-hover:italic transition-all uppercase tracking-tighter">
+                            <span class="lang-zh">风光 / Landscape</span><span class="lang-en">Landscape</span>
+                        </h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-40 text-center border-t border-line-gray mt-64 text-[8px] tracking-[1.2em] text-gray-300 uppercase italic">
+        © 2026 Qingpeng Meng — All Rights Reserved
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 300, once: true, easing: 'ease-out', offset: 30 });
+
+        let isEn = false;
+        function toggleLang() {
+            isEn = !isEn;
+            const zhElements = document.querySelectorAll('.lang-zh');
+            const enElements = document.querySelectorAll('.lang-en');
+            const langBtn = document.getElementById('langBtn');
+
+            if (isEn) {
+                zhElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                langBtn.innerText = 'CHINESE / 中文';
+            } else {
+                zhElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+                langBtn.innerText = 'EN / 中';
+            }
+        }
+    </script>
+</body>
+</html>

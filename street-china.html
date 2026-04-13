@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHINA | 孟庆鹏 Qingpeng Meng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'off-white': '#F9F9F9', 'dark-gray': '#1A1A1A' },
+                    fontFamily: { serif: ['"Cormorant Garamond"', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F9F9F9; color: #1A1A1A; scroll-behavior: smooth; overflow-x: hidden; }
+        .lang-en { display: none; }
+        .img-wrapper { width: 100%; display: flex; flex-direction: column; }
+        .img-wrapper img { width: 100%; height: auto; max-height: 90vh; object-fit: contain; }
+        ::-webkit-scrollbar { width: 3px; }
+        ::-webkit-scrollbar-thumb { background: #E5E5E5; }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <nav class="fixed top-0 w-full z-50 px-10 h-24 flex items-center justify-between bg-white/30 backdrop-blur-lg border-b border-line-gray">
+        <a href="street.html" class="text-[10px] tracking-[0.4em] uppercase hover:line-through transition-all">← <span class="lang-zh">返回</span><span class="lang-en">Back</span></a>
+        <button onclick="toggleLang()" id="langBtn" class="text-[9px] tracking-[0.2em] uppercase border border-black px-4 py-1.5 hover:bg-black hover:text-white transition-all">EN / 中</button>
+    </nav>
+
+    <main class="max-w-[1600px] mx-auto px-10 pt-64 pb-40">
+        <header class="mb-48 text-center" data-aos="fade-in">
+            <h1 class="font-serif text-[10rem] italic tracking-tighter opacity-[0.03] absolute left-1/2 transform -translate-x-1/2 -mt-20 select-none uppercase">China</h1>
+            <h2 class="font-serif text-6xl md:text-7xl relative z-10 italic">
+                <span class="lang-zh">中国 · 街头</span><span class="lang-en">China / Street</span>
+            </h2>
+            <div class="h-[1px] w-20 bg-black mt-12 mx-auto opacity-20"></div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-48 items-start">
+            <div class="img-wrapper" data-aos="fade-right"><img src="images/cn1.jpg" alt="01"></div>
+            <div class="img-wrapper md:mt-32" data-aos="fade-left"><img src="images/cn2.jpg" alt="02"></div>
+            <div class="img-wrapper" data-aos="fade-right"><img src="images/cn3.jpg" alt="03"></div>
+            <div class="img-wrapper md:mt-20" data-aos="fade-left"><img src="images/cn4.jpg" alt="04"></div>
+            <div class="img-wrapper md:-mt-16" data-aos="fade-right"><img src="images/cn5.jpg" alt="05"></div>
+            <div class="img-wrapper" data-aos="fade-left"><img src="images/cn6.jpg" alt="06"></div>
+            <div class="img-wrapper md:mt-40" data-aos="fade-right"><img src="images/cn7.jpg" alt="07"></div>
+            <div class="img-wrapper" data-aos="fade-left"><img src="images/cn8.jpg" alt="08"></div>
+            <div class="img-wrapper" data-aos="fade-right"><img src="images/cn9.jpg" alt="09"></div>
+            <div class="img-wrapper md:mt-24" data-aos="fade-left"><img src="images/cn10.jpg" alt="10"></div>
+        </div>
+    </main>
+
+    <footer class="py-32 text-center border-t border-gray-100 mt-40">
+        <p class="text-[10px] tracking-[1.2em] text-gray-300 uppercase italic">Fin.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, easing: 'ease-out-sine', offset: 100 });
+        let isEn = false;
+        function toggleLang() {
+            isEn = !isEn;
+            document.querySelectorAll('.lang-zh').forEach(el => el.style.display = isEn ? 'none' : 'block');
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = isEn ? 'block' : 'none');
+            document.getElementById('langBtn').innerText = isEn ? '中文 / EN' : 'EN / 中';
+        }
+    </script>
+</body>
+</html>

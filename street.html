@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street | Qingpeng Meng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #F9F9F9; color: #1A1A1A; }
+        .lang-en { display: none; }
+        .img-box { overflow: hidden; border: 0.5px solid #E5E5E5; }
+        .img-box img { transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(100%); }
+        .group:hover img { transform: scale(1.05); filter: grayscale(0%); }
+    </style>
+</head>
+<body class="antialiased font-sans">
+    
+    <nav class="fixed top-0 w-full z-50 px-10 h-24 flex items-center justify-between">
+        <a href="index.html" class="text-[9px] tracking-[0.5em] uppercase hover:line-through">← <span class="lang-zh">返回</span><span class="lang-en">Back</span></a>
+        <button onclick="toggleLang()" id="langBtn" class="border border-black px-4 py-1 text-[9px] tracking-widest hover:bg-black hover:text-white transition-all">EN / 中</button>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-56 pb-40">
+        <header class="mb-32 border-l border-black pl-8">
+            <h1 class="font-serif text-6xl italic tracking-tighter">
+                <span class="lang-zh">街头摄影</span><span class="lang-en">Street Photography</span>
+            </h1>
+            <p class="mt-4 text-[10px] tracking-[0.4em] uppercase opacity-40">Series: Observations by Region</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-32">
+            
+            <div class="md:col-span-8 group" data-aos="fade-up">
+                <a href="street-usa.html" class="block">
+                    <div class="img-box">
+                        <img src="images/street_1.jpg" class="w-full h-auto" alt="USA">
+                    </div>
+                    <div class="mt-6">
+                        <h2 class="font-serif text-4xl italic uppercase tracking-tighter">
+                            <span class="lang-zh">美国</span><span class="lang-en">United States</span>
+                        </h2>
+                        <p class="text-[9px] tracking-[0.3em] opacity-40 mt-1 font-sans italic">01 — The Western Light</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="md:col-start-6 md:col-span-7 group md:-mt-16" data-aos="fade-up">
+                <a href="street-china.html" class="block text-right">
+                    <div class="img-box">
+                        <img src="images/street_2.jpg" class="w-full h-auto" alt="China">
+                    </div>
+                    <div class="mt-6 text-right">
+                        <h2 class="font-serif text-4xl italic uppercase tracking-tighter">
+                            <span class="lang-zh">中国</span><span class="lang-en">China</span>
+                        </h2>
+                        <p class="text-[9px] tracking-[0.3em] opacity-40 mt-1 font-sans italic">02 — Eastern Fragments</p>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        let isEn = false;
+        function toggleLang() {
+            isEn = !isEn;
+            document.querySelectorAll('.lang-zh').forEach(el => el.style.display = isEn ? 'none' : 'block');
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = isEn ? 'block' : 'none');
+            document.getElementById('langBtn').innerText = isEn ? '中文 / EN' : 'EN / 中';
+        }
+    </script>
+</body>
+</html>
